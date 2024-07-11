@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //  pd
+
+    /*
+              Promise();
+
+       resolve()  -> then()
+
+        reject()   -> catch()
+
+-----------------------------------------------------
+        
+    let prom = new Promise();
+
+    let promi = new Promise(function (resolve, reject) {
+
+        if (condition) {
+            resolve();
+        }
+        else {
+            reject();
+        }
+
+    })
+
+    promi.then(onFulfilment);
+    promi.then(onRejection);
+*/
+
+
+
+    // -----------------EXAMPLE----------------------
+
+    // let variable = false;
+
+    function prom (variable) {
+        return prom = new Promise(function (resolve, reject) {
+            console.log("fetching Data")
+         setTimeout(()=> {
+            if (variable) {
+                resolve("i am successfull");
+            }
+            else {
+                reject("i am failed");
+            }
+         }, 1000)
+        })
+
+    }
+
+    let onfulfillment = (result) =>{
+        console.log(result)
+    }
+
+    let onRejection = (err) =>{
+        console.log(err)
+    }
+
+    prom(true).then(onfulfillment);
+    prom(true).catch(onRejection);
+
+
+    console.log(prom(true));
+
+
+
+</script>
+<body>
+    
+</body>
+</html>
